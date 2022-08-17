@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback Form</title>
+    <!-- <link rel="stylesheet" href="https://assets.ubuntu.com/v1/vanilla-framework-version-3.6.1.min.css" /> -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>My Feedback Form</h1>
+        <form class="form" enctype="multipart/form-data" action="form.py" method="post">
+            <div class="form-control">
+                <label for="name">Name: </label>
+                <input type="text" name="name">
+            </div>
+            <div class="form-control">
+                <label for="email">Email: </label>
+                <input type="email" name="email">
+            </div>
+            <div class="form-control">
+                <label for="pass">Password: </label>
+                <input type="password" name="pass">
+            </div>
+            <div class="form-control">
+                <p for="emotions">Please check all the emotions that apply to you: </p>
+                <span><input type="checkbox" name="emotions" value="angry">Angry</span> <br><br>
+                <span><input type="checkbox" name="emotions" value="sad"> Sad</span> <br><br>
+                <span><input type="checkbox" name="emotions" value="happy"> Happy</span> <br><br>
+                <span><input type="checkbox" name="emotions" value="ambivalent"> Ambivalent</span> <br><br>
+            </div>
+            <div class="form-control">
+                <p for="satisfaction">How satisfied were you with our service? </p>
+                <span><input type="radio" name="satisfaction" value="very satisfied"> Very Satisfied</span> <br><br>
+                <span><input type="radio" name="satisfaction" value="satisfied"> Satisfied</span> <br><br>
+                <span><input type="radio" name="satisfaction" value="didn't care"> Didn't Care</span> <br><br>
+                <span><input type="radio" name="satisfaction" value="dissatisfied"> Dissatisfied</span> <br><br>
+                <span><input type="radio" name="satisfaction" value="very dissatisfied"> Very Dissatisfied</span> <br><br>
+            </div>
+            <div class="form-control">
+                <label for="comments">Further Comments: </label>
+                <textarea name="comments"></textarea>
+            </div>
+            <div class="form-control">
+                <label for="bioimg">Bio photo: </label>
+                <input type="file" name="bioimg">
+            </div>
+            <div class="form-control">
+                <label for="location">Location visited: </label>
+                <select name="location">
+                    <option value="usa">USA</option>
+                    <option value="uk">UK</option>
+                    <option value="australia">Australia</option>
+                </select>
+            </div>
+            <button type="submit" id="btn">Submit</button>
+        </form>
+    </div>
+</body>
+</html>
