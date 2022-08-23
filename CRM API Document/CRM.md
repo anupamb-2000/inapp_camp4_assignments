@@ -1,7 +1,7 @@
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
-<center><span style="font-size: 60pt;">CRM</span></center>
-<center><h2>REST API Documentation</h2></center>
+<h1 style="font-size: 60pt;">CRM</h1>
+<center><h2>API Documentation</h2></center>
 
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
