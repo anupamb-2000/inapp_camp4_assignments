@@ -98,11 +98,12 @@
         "code": String,
         "name": String,
         "description": String,
+        "preview" : String,
         "qualification": String,
         "trainer": Number,  
-        "duration": Number,
+        "duration": Number, 
         "startDate": String,
-        "amount": Number
+        "batchSize": Number
     }
     ```
 
@@ -123,11 +124,12 @@
         "code": String,
         "name": String,
         "description": String,
+        "preview" : String,
         "qualification": String,
         "trainer": Number,  
         "duration": Number, 
         "startDate": String,
-        "amount": Number
+        "batchSize": Number
     }
     ```
 
@@ -137,11 +139,12 @@
         "code": String,
         "name": String,
         "description": String,
+        "preview" : String,
         "qualification": String,
         "trainer": Number,  
-        "duration": Number,
+        "duration": Number, 
         "startDate": String,
-        "amount": Number
+        "batchSize": Number
     }
     ```
 
@@ -166,11 +169,12 @@
         "code": String,
         "name": String,
         "description": String,
+        "preview" : String,
         "qualification": String,
         "trainer": Number,  
         "duration": Number, 
         "startDate": String,
-        "amount": Number
+        "batchSize": Number
     }
     ```
 
@@ -180,11 +184,12 @@
         "code": String,
         "name": String,
         "description": String,
+        "preview" : String,
         "qualification": String,
         "trainer": Number,  
         "duration": Number, 
         "startDate": String,
-        "amount": Number
+        "batchSize": Number
     }
     ```
 
@@ -503,3 +508,358 @@
 
 
 ---
+
+
+## Categories
+- ### List all categories
+    ```
+    GET    /v1/categories
+    ```  
+
+    Response body:
+    ```js
+    [
+        {
+            "id": Number,
+            "name": String
+        },
+        ...
+    ]
+    ```
+
+    HTTP Status:  
+    | Status Code | Description |  
+    |:-----------:|:------------|
+    | 200         | OK          |
+
+- ### View specific category
+    ```
+    GET    /v1/categories/{id}
+    ```  
+        
+    Response body:
+    ```js
+    {
+        "id": Number,
+        "name": String
+    }
+    ```
+
+    HTTP Status:  
+    | Status Code | Description |  
+    |:-----------:|:------------|
+    | 200         | OK          |
+    | 404         | Not found   |
+
+- ### Create new category
+    ```
+    POST   /v1/categories
+    ```  
+
+
+    Request body:
+    ```js
+    {
+        "name": String
+    }
+    ```
+
+    Response body:
+    ```js
+    {
+        "id": Number,
+        "name": String
+    }
+    ```
+
+    HTTP Status:  
+    | Status Code | Description |  
+    |:-----------:|:------------|
+    | 201         | Created     |
+    | 400         | Bad Request |
+    | 401         | Unauthorized |
+    | 403         | Forbidden   |
+
+- ### Update category
+    ```
+    PUT    /v1/categories/{id}
+    PATCH  /v1/categories/{id}
+    ```  
+
+
+    Request body:
+    ```js
+    {
+        "name": String
+    }
+    ```
+
+    Response body:
+    ```js
+    {
+        "id": Number,
+        "name": String
+    }
+    ```
+
+    HTTP Status:  
+    | Status Code | Description |  
+    |:-----------:|:------------|
+    | 201         | Created     |
+    | 400         | Bad Request |
+    | 401         | Unauthorized |
+    | 403         | Forbidden   |
+    | 404         | Not found   |
+
+- ### Delete category
+    ```
+    DELETE /v1/categories/{id}
+    ```  
+        
+
+    HTTP Status:  
+    | Status Code | Description |  
+    |:-----------:|:------------|
+    | 204         | No Content (Deleted successfully) |
+    | 401         | Unauthorized |
+    | 403         | Forbidden   |
+    | 404         | Not found   |
+
+
+---
+
+
+## Qualifications
+- ### List all qualifications
+    ```
+    GET    /v1/qualifications
+    ```  
+ 
+    Response body:
+    ```js
+    [
+        {
+            "id": Number,
+            "code": String,
+            "name": String
+        },
+        ...
+    ]
+    ```
+
+    HTTP Status:  
+    | Status Code | Description |  
+    |:-----------:|:------------|
+    | 200         | OK          |
+
+- ### View specific qualification
+    ```
+    GET    /v1/qualifications/{id}
+    ```  
+ 
+    Response body:
+    ```js
+    {
+        "id": Number,
+        "code": String,
+        "name": String
+    }
+    ```
+
+    HTTP Status:  
+    | Status Code | Description |  
+    |:-----------:|:------------|
+    | 200         | OK          |
+    | 404         | Not found   |
+
+- ### Create new qualification
+    ```
+    POST   /v1/qualifications
+    ```  
+
+
+    Request body:
+    ```js
+    {
+        "code": String,
+        "name": String
+    }
+    ```
+
+    Response body:
+    ```js
+    {
+        "id": Number,
+        "code": String,
+        "name": String
+    }
+    ```
+
+    HTTP Status:  
+    | Status Code | Description |  
+    |:-----------:|:------------|
+    | 201         | Created     |
+    | 400         | Bad Request |
+    | 401         | Unauthorized |
+    | 403         | Forbidden   |
+
+- ### Update qualification
+    ```
+    PUT    /v1/qualifications/{id}
+    PATCH  /v1/qualifications/{id}
+    ```  
+        
+
+    Request body:
+    ```js
+    {
+        "code": String,
+        "name": String
+    }
+    ```
+
+    Response body:
+    ```js
+    {
+        "id": Number,
+        "code": String,
+        "name": String
+    }
+    ```
+
+    HTTP Status:  
+    | Status Code | Description |  
+    |:-----------:|:------------|
+    | 201         | Created     |
+    | 400         | Bad Request |
+    | 401         | Unauthorized |
+    | 403         | Forbidden   |
+    | 404         | Not found   |
+
+- ### Delete qualification
+    ```
+    DELETE /v1/qualifications/{id}
+    ```  
+        
+
+    HTTP Status:  
+    | Status Code | Description |  
+    |:-----------:|:------------|
+    | 204         | No Content (Deleted successfully) |
+    | 401         | Unauthorized |
+    | 403         | Forbidden   |
+    | 404         | Not found   |
+
+
+---
+
+
+## Batches
+- ### List all batches
+    ```
+    GET    /v1/batches
+    ```  
+
+    Response body:
+    ```js
+    [
+        {
+            "id": Number,
+            "code": String,
+            "name": String
+        },
+        ...
+    ]
+    ```
+
+    HTTP Status:  
+    | Status Code | Description |  
+    |:-----------:|:------------|
+    | 200         | OK          |
+
+- ### View specific batch
+    ```
+    GET    /v1/batches/{id}
+    ``` 
+    
+    Response body:
+    ```js
+    {
+        "id": Number,
+        "code": String,
+        "name": String
+    }
+    ```
+
+    HTTP Status:  
+    | Status Code | Description |  
+    |:-----------:|:------------|
+    | 200         | OK          |
+    | 404         | Not found   |
+
+- ### Create new batch
+    ```
+    POST   /v1/batches
+    ```  
+
+    Request body:
+    ```js
+    {
+        "code": String,
+        "name": String
+    }
+    ```
+
+    HTTP Status:  
+    | Status Code | Description |  
+    |:-----------:|:------------|
+    | 201         | Created     |
+    | 400         | Bad Request |
+    | 401         | Unauthorized |
+    | 403         | Forbidden   |
+
+- ### Update batch
+    ```
+    PUT    /v1/batches/{id}
+    PATCH  /v1/batches/{id}
+    ```  
+
+    Request body:
+    ```js
+    {
+        "code": String,
+        "name": String
+    }
+    ```
+
+    Response body:
+    ```js
+    {
+        "id": Number,
+        "code": String,
+        "name": String
+    }
+    ```
+
+    HTTP Status:  
+    | Status Code | Description |  
+    |:-----------:|:------------|
+    | 201         | Created     |
+    | 400         | Bad Request |
+    | 401         | Unauthorized |
+    | 403         | Forbidden   |
+    | 404         | Not found   |
+
+- ### Delete batch
+    ```
+    DELETE /v1/batches/{id}
+    ```  
+        
+
+    HTTP Status:  
+    | Status Code | Description |  
+    |:-----------:|:------------|
+    | 204         | No Content (Deleted successfully) |
+    | 401         | Unauthorized |
+    | 403         | Forbidden   |
+    | 404         | Not found   |
