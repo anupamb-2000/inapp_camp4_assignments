@@ -4,8 +4,6 @@
 
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
-<span style="float: right;">Akshaylal S</span>
-
 
 # Index
 
