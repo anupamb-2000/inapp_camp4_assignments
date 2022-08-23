@@ -1,7 +1,6 @@
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
-<h1 style="font-size: 60pt;">CRM</h1>
-<center><h2>API Documentation</h2></center>
+<center><h1 style="font-size: 60pt;">CRM API Documentation</h1></center>
 
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
