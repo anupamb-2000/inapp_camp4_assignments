@@ -1,0 +1,111 @@
+:root {
+    --white: #F2F2F2;
+    --orange: #F96D00;
+    --black: #393E46;
+    --grey: #5C636E;
+    --orange-low: #F96D0020;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.orange {
+    background-color: var(--orange) !important;
+    color: var(--white) !important;
+}
+
+.black {
+    background-color: var(--black) !important;
+    color: var(--white) !important;
+}
+
+body {
+    background-color: var(--white);
+    background-image: url("https://www.transparenttextures.com/patterns/concrete-wall.png");
+}
+
+.black-text {
+    color: var(--black) !important;
+}
+
+.white-text {
+    color: var(--white) !important;
+}
+
+.orange-text {
+    color: var(--orange) !important;
+}
+
+.logo-container {
+    padding: 8%;
+}
+
+.content-container {
+    width: 100%;
+}
+
+.card {
+    border-radius: 1%;
+    margin: 1em;
+    padding: 0.5em 2em;
+}
+
+.card-title {
+    margin: 1em 0;
+    font-weight: bold !important;
+}
+
+.modal, .modal-footer {
+    background-color: var(--white) !important;
+}
+
+.input-field {
+    background-color: var(--white) !important;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+.input-field label {
+    color: var(--black);
+}
+
+.input-field input:focus+label, .input-field textarea:focus+label {
+    color: var(--orange) !important;
+}
+
+.input-field input:focus, .input-field textarea:focus {
+    border-bottom: 1px solid var(--orange) !important;
+    box-shadow: 0 1px 0 0 var(--orange) !important;
+}
+
+.input-field .prefix.active {
+    color: var(--orange);
+}
+
+.btn {
+    margin-left: 2% !important;
+}
+
+.filter-btn {
+    margin-left: 2% !important;
+    border-radius: 15%;
+}
+
+.buttons {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    padding: 0.5em;
+    max-width: fit-content;
+    margin-right: 1em;
+}
+
+.waves-effect.waves-orange .waves-ripple {
+    background-color: var(--orange-low);
+}
+
+[type="checkbox"]:checked + span:not(.lever):before {
+    border-right: 2px solid var(--orange);
+    border-bottom: 2px solid var(--orange);
+}

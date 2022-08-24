@@ -1,4 +1,4 @@
-from flask import Flask, redirect, url_for, request, abort, jsonify # convert list/dict to json
+from flask import Flask, render_template, redirect,url_for, request, abort, jsonify # convert list/dict to json
 import requests
 import pyodbc
 
@@ -14,9 +14,6 @@ app = Flask(__name__)
 # app is out flask application obj
 # / is the root of the website, like the default index.html
 # greet() functiion will be executed when accessing defalt reoute
-@app.route("/")
-def home():
-    return "Welcome to phonebook API"
 
 # list all contacts in the phonebook
 @app.route("/contacts", methods=['GET'])
@@ -32,7 +29,8 @@ def listContacts():
     else:
         #saving the result into a dictionary
         phoneBook = [{'Name': row[0], 'Number': row[1]} for row in mycursor.fetchall()]
-        return jsonify(phoneBook)
+        return render_template('index.html', phoneBook=phoneBook)
+        # return f"<h1>{phoneBook}</h1>"
     finally: 
         myconn.commit()
         myconn.close()
@@ -40,10 +38,6 @@ def listContacts():
 # Add contact
 @app.route("/contacts", methods=['POST'])
 def addContact():
-    # checking if the received string is a valid json
-    if not request.json:
-        abort(400) # 400 means a bad request
-    
     #create a connection with the connection string
     myconn = pyodbc.connect(myConString)
     try: 
@@ -51,8 +45,8 @@ def addContact():
         mycursor = myconn.cursor()
         # create a new contact as a dictionary item
         contact = {
-            'Name': request.json['Name'],
-            'Number': request.json['Number']
+            'Name': request.form.get('Name'),
+            'Number': request.form.get('Number')
         }
         name = contact['Name']
         number = contact['Number']
@@ -62,7 +56,7 @@ def addContact():
         return(f"{type(e).__name__}")
     else:
         # jsonify will convert list/dict to json format
-        return jsonify({'contact': contact}),201
+        return redirect(url_for('listContacts'))
     finally:
         myconn.commit()
         myconn.close()
@@ -138,7 +132,7 @@ def delete_book(name):
             except Exception as e:
                 return(f"{type(e).__name__}")
             else:
-                return jsonify({'status': 'deleted'})
+                return redirect(url_for('listContacts'))
         else:
             abort(404)
     except Exception as e:
