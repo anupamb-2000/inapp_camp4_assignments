@@ -3,6 +3,8 @@
     --orange: #F96D00;
     --black: #393E46;
     --grey: #5C636E;
+    --green: #2ECC71;
+    --red: #E74C3C;
     --orange-low: #F96D0020;
 }
 
@@ -35,6 +37,14 @@ body {
 
 .orange-text {
     color: var(--orange) !important;
+}
+
+.green-text {
+    color: var(--green) !important;
+}
+
+.red-text {
+    color: var(--red) !important;
 }
 
 .logo-container {
